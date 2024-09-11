@@ -1,3 +1,20 @@
+
+// Example usage
+const image = [
+  [8, 10, 3, 4],
+  [6, 8, 10, 5],
+  [20, 30, 6, 6],
+  [2, 7, 10, 5],
+];
+
+const kernel = [
+  [1, -2, 1],
+  [-2, 5, -2],
+  [1, -2, 1],
+];
+
+let multiplier = 1 / 9;
+
 function convolution2D(image, kernel, multiplier = 1) {
   const imageHeight = image.length;
   const imageWidth = image[0].length;
@@ -39,22 +56,6 @@ function convolution2D(image, kernel, multiplier = 1) {
   }
   return { output, cleanOutput };
 }
-
-// Example usage
-const image = [
-  [8, 10, 3, 4],
-  [6, 8, 10, 5],
-  [20, 30, 6, 6],
-  [2, 7, 10, 5],
-];
-
-const kernel = [
-  [1, -2, 1],
-  [-2, 5, -2],
-  [1, -2, 1],
-];
-
-let multiplier = 1 / 9;
 
 const { output, cleanOutput } = convolution2D(image, kernel, multiplier);
 console.log("Ket qua chua lam tron");
