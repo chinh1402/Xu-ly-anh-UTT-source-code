@@ -1,19 +1,19 @@
 
 // Example usage
 const image = [
-  [8, 10, 3, 4],
-  [6, 8, 10, 5],
-  [20, 30, 6, 6],
-  [2, 7, 10, 5],
+  [4,6,2,0],
+  [7,1,5,3],
+  [6,3,7,1],
+  [4,5,6,2],
 ];
 
 const kernel = [
-  [1, -2, 1],
-  [-2, 5, -2],
-  [1, -2, 1],
+  [1,1,1],
+  [1,8,1],
+  [1,1,1],
 ];
 
-let multiplier = 1 / 9;
+let multiplier = 1;
 
 function convolution2D(image, kernel, multiplier = 1) {
   const imageHeight = image.length;
