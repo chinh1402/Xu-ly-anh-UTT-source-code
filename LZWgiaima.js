@@ -72,7 +72,7 @@ function lzwDecode(compressed) {
 }
 
 const compressed = [
-    65,67,66,258,259,260,261,262,263,264,265,266,267,268,269
+    65,66,67,259,258,67,262,68 
  ]
 
 const decompressed = lzwDecode(compressed);

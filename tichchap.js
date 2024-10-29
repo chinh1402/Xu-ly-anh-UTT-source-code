@@ -1,15 +1,15 @@
 
 // Example usage
 const image = [
-  [4,6,2,0],
-  [7,1,5,3],
-  [6,3,7,1],
-  [4,5,6,2],
+  [5, 5, 3, 2],
+  [8, 3, 5, 5],
+  [5, 2, 3, 9],
+  [9, 3, 5, 3],
 ];
 
 const kernel = [
   [1,1,1],
-  [1,8,1],
+  [1,-8,1],
   [1,1,1],
 ];
 
@@ -51,7 +51,14 @@ function convolution2D(image, kernel, multiplier = 1) {
         }
       }
       output[i][j] = (sum * multiplier).toFixed(2); // Keep 2 decimal places
-      cleanOutput[i][j] = Math.round(sum * multiplier); // Rounded to nearest integer
+      let normalizedValue = sum * multiplier;
+      if (sum * multiplier > 255) {
+        normalizedValue = 255;
+      }
+      if (sum * multiplier < 0) {
+        normalizedValue = 0;
+      }
+      cleanOutput[i][j] = Math.round(normalizedValue); // Rounded to nearest integer
     }
   }
   return { output, cleanOutput };
